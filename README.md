@@ -39,7 +39,7 @@ UniSync supports quality education by helping students stay organized with their
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 | Area | Technology |
 |---|---|
