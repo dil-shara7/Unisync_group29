@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:name=".UniSyncApp"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.UniSync">
+
+        <!-- Launcher -->
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.UniSync">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Legacy boilerplate — kept so prior code that targets MainActivity still builds. -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+
+        <!-- Auth -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false"
+            android:label="@string/auth_login" />
+        <activity
+            android:name=".SignUpActivity"
+            android:exported="false"
+            android:label="@string/auth_sign_up" />
+
+        <!-- Core -->
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false"
+            android:label="@string/profile_title" />
+
+        <!-- Schedule -->
+        <activity
+            android:name=".ScheduleManagerActivity"
+            android:exported="false"
+            android:label="@string/schedule_title" />
+        <activity
+            android:name=".ScheduleCalendarActivity"
+            android:exported="false"
+            android:label="@string/schedule_calendar" />
+        <activity
+            android:name=".ScheduleReminderActivity"
+            android:exported="false"
+            android:label="@string/schedule_reminder" />
+        <activity
+            android:name=".ManageScheduleActivity"
+            android:exported="false"
+            android:label="Manage Schedule" />
+        <activity
+            android:name=".CreateScheduleActivity"
+            android:exported="false"
+            android:label="Create Schedule" />
+        <activity
+            android:name=".ScheduleFormActivity"
+            android:exported="false"
+            android:label="@string/schedule_add_event" />
+        <activity
+            android:name=".ViewScheduleActivity"
+            android:exported="false"
+            android:label="View Schedule" />
+        <activity
+            android:name=".TimetableListActivity"
+            android:exported="false"
+            android:label="@string/schedule_timetable" />
+        <activity
+            android:name=".EventDetailActivity"
+            android:exported="false" />
+
+        <!-- Notes Hub -->
+        <activity
+            android:name=".NotesHubActivity"
+            android:exported="false"
+            android:label="@string/notes_title" />
+        <activity
+            android:name=".NotesListActivity"
+            android:exported="false"
+            android:label="@string/notes_my_notes" />
+        <activity
+            android:name=".NotesUploadActivity"
+            android:exported="false"
+            android:label="@string/notes_upload" />
+        <activity
+            android:name=".ManageNotesActivity"
+            android:exported="false"
+            android:label="Manage Notes" />
+        <activity
+            android:name=".CreateNotesActivity"
+            android:exported="false"
+            android:label="Create Notes" />
+        <activity
+            android:name=".CreateDesignActivity"
+            android:exported="false"
+            android:label="Create Design" />
+        <activity
+            android:name=".EditNotesActivity"
+            android:exported="false"
+            android:label="Edit Notes" />
+        <activity
+            android:name=".ViewNotesActivity"
+            android:exported="false"
+            android:label="View Notes" />
+        <activity
+            android:name=".MyNotesActivity"
+            android:exported="false"
+            android:label="My Notes" />
+        <activity
+            android:name=".NoteDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SavedNotesActivity"
+            android:exported="false"
+            android:label="Saved Notes" />
+        <activity
+            android:name=".RecentNotesActivity"
+            android:exported="false"
+            android:label="Recent Notes" />
+        <activity
+            android:name=".FavoriteNotesActivity"
+            android:exported="false"
+            android:label="Favorite Notes" />
+
+        <!-- Marketplace -->
+        <activity
+            android:name=".MarketplaceActivity"
+            android:exported="false"
+            android:label="@string/marketplace_title" />
+        <activity
+            android:name=".MarketplaceDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddItemActivity"
+            android:exported="false"
+            android:label="Add item" />
+        <activity
+            android:name=".CategoryProductsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditItemActivity"
+            android:exported="false"
+            android:label="Edit Item" />
+        <activity
+            android:name=".MarketplaceCartActivity"
+            android:exported="false"
+            android:label="@string/marketplace_cart" />
+        <activity
+            android:name=".MarketplaceCheckoutActivity"
+            android:exported="false"
+            android:label="@string/marketplace_checkout" />
+        <activity
+            android:name=".MarketplaceSearchActivity"
+            android:exported="false"
+            android:label="Search" />
+
+        <!-- Lost & Found -->
+        <activity
+            android:name=".LostFoundActivity"
+            android:exported="false"
+            android:label="@string/lf_title" />
+        <activity
+            android:name=".LostFoundReportActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LostFoundCategoriesActivity"
+            android:exported="false"
+            android:label="Lost Items" />
+        <activity
+            android:name=".LostFoundItemsActivity"
+            android:exported="false" />
+    </application>
+
+</manifest>

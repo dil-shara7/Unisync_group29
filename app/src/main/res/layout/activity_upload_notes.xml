@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Upload Notes — Figma "Study Note Hub 7".
+  Left: upload frame with "Upload image" hint. Right: camera / gallery / drive shortcuts.
+  Bottom: share / download / save row + "Convert into a PDF" button.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    android:fitsSystemWindows="true"
+    tools:context=".UploadNotesActivity">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/include_module_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Upload frame -->
+    <FrameLayout
+        android:id="@+id/upload_frame"
+        android:layout_width="0dp"
+        android:layout_height="320dp"
+        android:layout_marginStart="@dimen/spacing_lg"
+        android:layout_marginTop="@dimen/spacing_lg"
+        android:layout_marginEnd="80dp"
+        android:background="@drawable/bg_upload_frame"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintEnd_toStartOf="@id/source_rail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:contentDescription="@null"
+                android:src="@android:drawable/ic_menu_gallery" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_sm"
+                android:text="Upload image"
+                android:textAppearance="@style/TextAppearance.UniSync.Caption" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- Source shortcuts: camera, gallery, drive -->
+    <LinearLayout
+        android:id="@+id/source_rail"
+        android:layout_width="56dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="@dimen/spacing_lg"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@id/upload_frame"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/upload_frame">
+
+        <ImageView
+            android:id="@+id/source_camera"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Camera"
+            android:src="@android:drawable/ic_menu_camera" />
+
+        <ImageView
+            android:id="@+id/source_gallery"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="@dimen/spacing_lg"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Gallery"
+            android:src="@android:drawable/ic_menu_gallery" />
+
+        <ImageView
+            android:id="@+id/source_drive"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="@dimen/spacing_lg"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Drive"
+            android:src="@android:drawable/ic_menu_upload" />
+    </LinearLayout>
+
+    <!-- Action row: share / download / save -->
+    <LinearLayout
+        android:id="@+id/action_row"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_xl"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/upload_frame">
+
+        <ImageView
+            android:id="@+id/action_share"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_action_square"
+            android:contentDescription="Share"
+            android:padding="12dp"
+            android:src="@android:drawable/ic_menu_share" />
+
+        <ImageView
+            android:id="@+id/action_download"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="@dimen/spacing_md"
+            android:background="@drawable/bg_action_square"
+            android:contentDescription="Download"
+            android:padding="12dp"
+            android:src="@android:drawable/stat_sys_download_done" />
+
+        <ImageView
+            android:id="@+id/action_save"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="@dimen/spacing_md"
+            android:background="@drawable/bg_action_square"
+            android:contentDescription="Save"
+            android:padding="12dp"
+            android:src="@android:drawable/ic_menu_save" />
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/convert_pdf"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="@dimen/spacing_lg"
+        android:layout_marginTop="@dimen/spacing_lg"
+        android:layout_marginEnd="@dimen/spacing_lg"
+        android:text="Convert into a PDF"
+        style="@style/Widget.UniSync.Button.Primary"
+        app:cornerRadius="@dimen/radius_input"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/action_row" />
+
+    <include
+        android:id="@+id/bottom_nav"
+        layout="@layout/include_bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

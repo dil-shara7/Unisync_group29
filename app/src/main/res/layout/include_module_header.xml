@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Shared module header used by Schedule, Marketplace, Notes Hub, Lost & Found.
+  Renders: status-bar strip, back arrow, page title (Joti One 32sp), horizontal divider.
+  Bind the page-title text from the host layout via tools:text or programmatically.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/module_header"
+    android:layout_width="match_parent"
+    android:layout_height="120dp">
+
+    <include
+        android:id="@+id/status_bar_include"
+        layout="@layout/include_status_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/header_back_button"
+        android:layout_width="@dimen/icon_size_xs"
+        android:layout_height="@dimen/icon_size_xs"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:contentDescription="@string/cd_back"
+        android:src="@android:drawable/ic_menu_revert"
+        android:rotation="180"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:padding="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/header_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="20dp"
+        android:textAppearance="@style/TextAppearance.UniSync.Logo"
+        tools:text="Module Title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/status_bar_include" />
+
+    <View
+        android:id="@+id/header_divider"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/stroke_thin"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/divider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

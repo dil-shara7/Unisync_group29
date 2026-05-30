@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Create Design — Figma "Study Note Hub 5".
+  Two thin tool rails (left + right) flanking a blank document canvas.
+  "Document 1" label on top, "+ Add new page" link at bottom.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    android:fitsSystemWindows="true"
+    tools:context=".CreateDesignActivity">
+
+    <include
+        android:id="@+id/status_bar"
+        layout="@layout/include_status_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/back_button"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="14dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/cd_back"
+        android:padding="2dp"
+        android:rotation="180"
+        android:src="@android:drawable/ic_menu_revert"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/status_bar" />
+
+    <TextView
+        android:id="@+id/title_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_sm"
+        android:layout_marginEnd="@dimen/spacing_md"
+        android:text="Create Design"
+        android:textAppearance="@style/TextAppearance.UniSync.Logo"
+        android:textSize="@dimen/text_size_title_large"
+        app:layout_constraintBottom_toBottomOf="@id/back_button"
+        app:layout_constraintEnd_toStartOf="@id/save_button"
+        app:layout_constraintStart_toEndOf="@id/back_button"
+        app:layout_constraintTop_toTopOf="@id/back_button" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/save_button"
+        android:layout_width="84dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="@dimen/spacing_md"
+        android:text="Save"
+        android:textSize="@dimen/text_size_caption"
+        style="@style/Widget.UniSync.Button.Primary"
+        app:cornerRadius="@dimen/radius_pill_button"
+        app:layout_constraintBottom_toBottomOf="@id/back_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/back_button" />
+
+    <TextView
+        android:id="@+id/doc_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_md"
+        android:text="Document 1"
+        android:textAppearance="@style/TextAppearance.UniSync.Body"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/back_button" />
+
+    <!-- Left tool rail -->
+    <LinearLayout
+        android:id="@+id/rail_left"
+        android:layout_width="36dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/spacing_md"
+        android:layout_marginTop="@dimen/spacing_sm"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/add_new_page"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/doc_label">
+        <ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@android:drawable/ic_menu_edit" android:contentDescription="@null" android:padding="6dp" />
+        <ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@android:drawable/ic_menu_sort_by_size" android:contentDescription="@null" android:padding="6dp" />
+        <ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@android:drawable/ic_menu_gallery" android:contentDescription="@null" android:padding="6dp" />
+        <ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@android:drawable/ic_menu_set_as" android:contentDescription="@null" android:padding="6dp" />
+        <ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@android:drawable/ic_menu_sort_alphabetically" android:contentDescription="@null" android:padding="6dp" />
+        <ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@android:drawable/ic_menu_view" android:contentDescription="@null" android:padding="6dp" />
+        <ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@android:drawable/ic_menu_zoom" android:contentDescription="@null" android:padding="6dp" />
+        <ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@android:drawable/ic_menu_crop" android:contentDescription="@null" android:padding="6dp" />
+    </LinearLayout>
+
+    <!-- Right tool rail -->
+    <LinearLayout
+        android:id="@+id/rail_right"
+        android:layout_width="36dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/spacing_sm"
+        android:layout_marginEnd="@dimen/spacing_md"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/add_new_page"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/doc_label">
+        <ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@android:drawable/ic_menu_edit" android:contentDescription="@null" android:padding="6dp" />
+        <ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@android:drawable/ic_menu_sort_by_size" android:contentDescription="@null" android:padding="6dp" />
+        <ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@android:drawable/ic_menu_sort_alphabetically" android:contentDescription="@null" android:padding="6dp" />
+        <ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@android:drawable/ic_input_get" android:contentDescription="@null" android:padding="6dp" />
+        <ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@android:drawable/ic_menu_set_as" android:contentDescription="@null" android:padding="6dp" />
+        <ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@android:drawable/ic_menu_share" android:contentDescription="@null" android:padding="6dp" />
+        <ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@android:drawable/ic_menu_save" android:contentDescription="@null" android:padding="6dp" />
+    </LinearLayout>
+
+    <!-- Document canvas: title + body editor inside a paper-like card -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/document_canvas"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/spacing_sm"
+        android:layout_marginTop="@dimen/spacing_xs"
+        android:layout_marginEnd="@dimen/spacing_sm"
+        android:layout_marginBottom="@dimen/spacing_sm"
+        android:background="@drawable/bg_design_tile"
+        android:padding="@dimen/spacing_md"
+        app:layout_constraintBottom_toTopOf="@id/add_new_page"
+        app:layout_constraintEnd_toStartOf="@id/rail_right"
+        app:layout_constraintStart_toEndOf="@id/rail_left"
+        app:layout_constraintTop_toBottomOf="@id/doc_label">
+
+        <EditText
+            android:id="@+id/input_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:autofillHints="postalAddress"
+            android:background="@android:color/transparent"
+            android:hint="Note title"
+            android:inputType="textCapSentences"
+            android:textAppearance="@style/TextAppearance.UniSync.Body"
+            android:textSize="@dimen/text_size_title"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/title_divider"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/stroke_thin"
+            android:layout_marginTop="@dimen/spacing_xs"
+            android:background="@color/outline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/input_title" />
+
+        <ImageView
+            android:id="@+id/attached_image_preview"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="@dimen/spacing_sm"
+            android:contentDescription="Attached image"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_divider" />
+
+        <EditText
+            android:id="@+id/input_body"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/spacing_sm"
+            android:autofillHints="postalAddress"
+            android:background="@android:color/transparent"
+            android:gravity="top|start"
+            android:hint="Start writing your note..."
+            android:inputType="textMultiLine|textCapSentences"
+            android:textAppearance="@style/TextAppearance.UniSync.Body"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/attached_image_preview" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/add_new_page"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/spacing_md"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="6dp"
+        android:text="+ Add new page"
+        android:textAppearance="@style/TextAppearance.UniSync.Body"
+        app:layout_constraintBottom_toTopOf="@id/bottom_nav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <include
+        android:id="@+id/bottom_nav"
+        layout="@layout/include_bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

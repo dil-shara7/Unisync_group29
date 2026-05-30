@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Calendar — Figma "Schedule Manager 6 / 7 / 8 / 11".
+  Mauve rounded container holding: Year, Month nav (< Month >), day-of-week header,
+  day grid (white tiles, selected day in deep purple).
+  Below: optional day events strip + Upcoming Events list.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    android:fitsSystemWindows="true"
+    tools:context=".ScheduleCalendarActivity">
+
+    <include
+        android:id="@+id/status_bar"
+        layout="@layout/include_status_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/back_button"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="14dp"
+        android:contentDescription="@string/cd_back"
+        android:rotation="180"
+        android:src="@android:drawable/ic_menu_revert"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:padding="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/status_bar" />
+
+    <TextView
+        android:id="@+id/calendar_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_sm"
+        android:text="Calendar"
+        android:textAppearance="@style/TextAppearance.UniSync.Logo"
+        android:textSize="@dimen/text_size_title_large"
+        app:layout_constraintBottom_toBottomOf="@id/back_button"
+        app:layout_constraintStart_toEndOf="@id/back_button"
+        app:layout_constraintTop_toTopOf="@id/back_button" />
+
+    <!-- Calendar container -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/calendar_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_md"
+        android:layout_marginTop="@dimen/spacing_md"
+        android:layout_marginEnd="@dimen/spacing_md"
+        android:background="@drawable/bg_calendar_container"
+        android:padding="@dimen/spacing_md"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/back_button">
+
+        <TextView
+            android:id="@+id/year_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.UniSync.Body"
+            android:textSize="@dimen/text_size_label"
+            android:textStyle="bold"
+            tools:text="2026"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/month_prev"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="@dimen/spacing_md"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Previous month"
+            android:padding="2dp"
+            android:rotation="180"
+            android:src="@android:drawable/ic_media_play"
+            app:layout_constraintBottom_toBottomOf="@id/month_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/month_label" />
+
+        <TextView
+            android:id="@+id/month_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_xs"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.UniSync.Body"
+            android:textSize="@dimen/text_size_title"
+            android:textStyle="bold"
+            tools:text="January"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/year_label" />
+
+        <ImageView
+            android:id="@+id/month_next"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="@dimen/spacing_md"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Next month"
+            android:padding="2dp"
+            android:src="@android:drawable/ic_media_play"
+            app:layout_constraintBottom_toBottomOf="@id/month_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/month_label" />
+
+        <!-- Day-of-week header row -->
+        <LinearLayout
+            android:id="@+id/dow_row"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_md"
+            android:orientation="horizontal"
+            android:weightSum="7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/month_label">
+
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="Mon" android:textAppearance="@style/TextAppearance.UniSync.Caption" />
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="Tue" android:textAppearance="@style/TextAppearance.UniSync.Caption" />
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="Wed" android:textAppearance="@style/TextAppearance.UniSync.Caption" />
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="Thu" android:textAppearance="@style/TextAppearance.UniSync.Caption" />
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="Fri" android:textAppearance="@style/TextAppearance.UniSync.Caption" />
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="Sat" android:textAppearance="@style/TextAppearance.UniSync.Caption" />
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="Sun" android:textAppearance="@style/TextAppearance.UniSync.Caption" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/calendar_grid"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_xs"
+            android:overScrollMode="never"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dow_row" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Selected day header banner -->
+    <TextView
+        android:id="@+id/selected_day_banner"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="@dimen/spacing_md"
+        android:layout_marginTop="@dimen/spacing_md"
+        android:layout_marginEnd="@dimen/spacing_md"
+        android:background="@drawable/bg_day_header"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/spacing_md"
+        android:paddingEnd="@dimen/spacing_md"
+        android:textAppearance="@style/TextAppearance.UniSync.Body"
+        tools:text="Wednesday 3 January"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/calendar_container" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/today_events_recycler"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_xs"
+        android:overScrollMode="never"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/selected_day_banner" />
+
+    <!-- Upcoming Events banner -->
+    <TextView
+        android:id="@+id/upcoming_banner"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="@dimen/spacing_md"
+        android:layout_marginTop="@dimen/spacing_sm"
+        android:layout_marginEnd="@dimen/spacing_md"
+        android:background="@drawable/bg_day_header"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/spacing_md"
+        android:paddingEnd="@dimen/spacing_md"
+        android:text="Upcoming Events"
+        android:textAppearance="@style/TextAppearance.UniSync.Body"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/today_events_recycler" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/upcoming_events_recycler"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/spacing_xs"
+        android:overScrollMode="never"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@id/bottom_nav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/upcoming_banner" />
+
+    <include
+        android:id="@+id/bottom_nav"
+        layout="@layout/include_bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

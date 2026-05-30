@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Login screen. Mirrors Figma node 8:274 from file 5vOHypfr8Ya03Au7lMnfhF.
+  Design canvas: 393x852 (px ≈ dp). All top offsets and widths come straight
+  from Figma; constants live in dimens.xml as login_*_top.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    android:fitsSystemWindows="true"
+    tools:context=".LoginActivity">
+
+    <!-- App logo -->
+    <TextView
+        android:id="@+id/logo_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/login_logo_top"
+        android:text="@string/app_name"
+        android:textAppearance="@style/TextAppearance.UniSync.Logo"
+        android:contentDescription="@string/cd_app_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Tagline -->
+    <TextView
+        android:id="@+id/tagline_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_xs"
+        android:text="@string/app_tagline"
+        android:textAppearance="@style/TextAppearance.UniSync.Tagline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logo_text" />
+
+    <!-- Email input -->
+    <EditText
+        android:id="@+id/email_input"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/input_field_height"
+        android:layout_marginStart="@dimen/screen_padding_horizontal"
+        android:layout_marginTop="@dimen/login_email_top"
+        android:layout_marginEnd="@dimen/screen_padding_horizontal"
+        android:autofillHints="emailAddress"
+        android:hint="@string/auth_email"
+        android:inputType="textEmailAddress"
+        android:importantForAutofill="yes"
+        style="@style/Widget.UniSync.InputField"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Password input -->
+    <EditText
+        android:id="@+id/password_input"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/input_field_height"
+        android:layout_marginStart="@dimen/screen_padding_horizontal"
+        android:layout_marginTop="@dimen/login_password_top"
+        android:layout_marginEnd="@dimen/screen_padding_horizontal"
+        android:autofillHints="password"
+        android:hint="@string/auth_password"
+        android:inputType="textPassword"
+        android:importantForAutofill="yes"
+        style="@style/Widget.UniSync.InputField"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Forgot password (right-aligned, below password) -->
+    <TextView
+        android:id="@+id/forgot_password_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/login_forgot_top"
+        android:layout_marginEnd="@dimen/screen_padding_horizontal"
+        android:text="@string/auth_forgot_password"
+        android:textAppearance="@style/TextAppearance.UniSync.Caption"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:padding="@dimen/spacing_xs"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Primary "Log In" button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/login_button"
+        android:layout_width="184dp"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginTop="@dimen/login_button_top"
+        android:text="@string/auth_login"
+        style="@style/Widget.UniSync.Button.Primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- "Or Continue With" divider row -->
+    <View
+        android:id="@+id/divider_left"
+        android:layout_width="@dimen/login_divider_side_width"
+        android:layout_height="@dimen/stroke_thin"
+        android:layout_marginStart="@dimen/screen_padding_horizontal"
+        android:layout_marginTop="@dimen/login_divider_top"
+        android:background="@color/divider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/or_continue_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/auth_or_continue_with"
+        android:textAppearance="@style/TextAppearance.UniSync.Body"
+        app:layout_constraintBottom_toBottomOf="@id/divider_left"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/divider_left" />
+
+    <View
+        android:id="@+id/divider_right"
+        android:layout_width="@dimen/login_divider_side_width"
+        android:layout_height="@dimen/stroke_thin"
+        android:layout_marginEnd="@dimen/screen_padding_horizontal"
+        android:background="@color/divider"
+        app:layout_constraintBottom_toBottomOf="@id/divider_left"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/divider_left" />
+
+    <!-- Google continue (light variant) -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/google_button"
+        android:layout_width="265dp"
+        android:layout_height="@dimen/button_height_social"
+        android:layout_marginTop="@dimen/login_google_top"
+        android:text="@string/auth_continue_google"
+        android:contentDescription="@string/auth_continue_google"
+        style="@style/Widget.UniSync.Button.Social.Light"
+        app:icon="@android:drawable/ic_menu_search"
+        tools:ignore="ContentDescription"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Facebook continue (primary variant) -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/facebook_button"
+        android:layout_width="265dp"
+        android:layout_height="@dimen/button_height_social"
+        android:layout_marginTop="@dimen/login_facebook_top"
+        android:text="@string/auth_continue_facebook"
+        android:contentDescription="@string/auth_continue_facebook"
+        style="@style/Widget.UniSync.Button.Social.Primary"
+        app:icon="@android:drawable/ic_menu_search"
+        tools:ignore="ContentDescription"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Sign Up prompt -->
+    <TextView
+        android:id="@+id/signup_prompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/login_signup_top"
+        android:text="@string/auth_no_account"
+        android:textAppearance="@style/TextAppearance.UniSync.Body"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:padding="@dimen/spacing_xs"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

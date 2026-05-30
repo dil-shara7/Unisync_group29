@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(claude mcp *)",
+      "mcp__figma__get_metadata",
+      "Bash(jq -r '.[0].text' \"mcp-figma-get_metadata-1779868177639.txt\")",
+      "Read(//tmp/**)",
+      "Bash(python *)",
+      "Read(//c/tmp/**)",
+      "mcp__figma__get_design_context",
+      "Bash(./gradlew.bat assembleDebug)",
+      "Bash(adb devices *)",
+      "PowerShell(Test-Path *)",
+      "PowerShell($adb = \"$env:LOCALAPPDATA\\\\Android\\\\Sdk\\\\platform-tools\\\\adb.exe\"; & $adb reconnect; Start-Sleep -Seconds 2; & $adb devices)",
+      "PowerShell($adb = \"$env:LOCALAPPDATA\\\\Android\\\\Sdk\\\\platform-tools\\\\adb.exe\"; & $adb kill-server; Start-Sleep -Seconds 1; & $adb start-server; Start-Sleep -Seconds 2; & $adb devices)",
+      "PowerShell($adb = \"$env:LOCALAPPDATA\\\\Android\\\\Sdk\\\\platform-tools\\\\adb.exe\"; $deadline = \\(Get-Date\\).AddSeconds\\(60\\); while \\(\\(Get-Date\\) -lt $deadline\\) { $state = \\(& $adb -s emulator-5554 get-state 2>$null\\); if \\($state -eq 'device'\\) { Write-Output \"ready\"; break }; Start-Sleep -Seconds 3 }; & $adb devices)",
+      "PowerShell($adb = \"$env:LOCALAPPDATA\\\\Android\\\\Sdk\\\\platform-tools\\\\adb.exe\"; & $adb version; Write-Output \"---\"; & $adb -s emulator-5554 shell getprop sys.boot_completed 2>&1; Write-Output \"---\"; & $adb -s emulator-5554 shell getprop ro.build.version.release 2>&1)",
+      "PowerShell(Get-Process *)",
+      "mcp__figma__whoami"
+    ]
+  }
+}

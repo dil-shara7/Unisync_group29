@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/spacing_md"
+    android:layout_marginTop="@dimen/spacing_sm"
+    android:layout_marginEnd="@dimen/spacing_md"
+    android:background="@drawable/bg_card_accent"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/spacing_sm"
+    android:paddingBottom="@dimen/spacing_sm">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/spacing_sm"
+        android:paddingEnd="@dimen/spacing_md">
+
+        <ImageView
+            android:id="@+id/row_image"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/bg_design_tile"
+            android:contentDescription="@null"
+            android:padding="6dp"
+            android:scaleType="centerCrop"
+            android:src="@android:drawable/ic_menu_gallery" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_md"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/row_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.UniSync.Body"
+                tools:text="Red colored pencil case" />
+
+            <TextView
+                android:id="@+id/row_meta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.UniSync.Caption"
+                tools:text="Lost 1 hour ago at Art Room" />
+
+            <TextView
+                android:id="@+id/row_see_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/spacing_xs"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="2dp"
+                android:text="see more"
+                android:textAppearance="@style/TextAppearance.UniSync.Caption"
+                android:textStyle="italic" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Expandable detail block (hidden by default) -->
+    <View
+        android:id="@+id/row_divider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/stroke_thin"
+        android:layout_marginTop="@dimen/spacing_sm"
+        android:background="@color/divider"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/row_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/spacing_md"
+        android:paddingTop="@dimen/spacing_sm"
+        android:paddingEnd="@dimen/spacing_md"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/detail_found_by"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.UniSync.Body"
+            tools:text="Found by: Sakuni Anupama" />
+
+        <TextView
+            android:id="@+id/detail_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.UniSync.Body"
+            tools:text="Date : 02/01/2026" />
+
+        <TextView
+            android:id="@+id/detail_contact_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contact me to verify your identity and pick you up."
+            android:textAppearance="@style/TextAppearance.UniSync.Body" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/detail_contact_phone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAppearance="@style/TextAppearance.UniSync.Body"
+                tools:text="071-1589645" />
+
+            <ImageView
+                android:id="@+id/detail_delete"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Delete item"
+                android:src="@android:drawable/ic_menu_delete" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

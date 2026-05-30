@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Create Notes — Figma "Study Note Hub 3 / 4".
+  Bottom nav pinned to bottom; content scrolls in middle.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    android:fitsSystemWindows="true"
+    tools:context=".CreateNotesActivity">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/include_module_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@id/bottom_nav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/spacing_lg">
+
+            <LinearLayout
+                android:id="@+id/section_new_note"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:background="@drawable/bg_collapsible_header"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/spacing_md"
+                android:paddingEnd="@dimen/spacing_md"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+                <ImageView android:id="@+id/chevron_new_note" android:layout_width="16dp" android:layout_height="16dp" android:contentDescription="@null" android:rotation="90" android:src="@android:drawable/ic_media_play" />
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="@dimen/spacing_md" android:layout_weight="1" android:text="New Note" android:textAppearance="@style/TextAppearance.UniSync.Body" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/designs_row1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_md"
+                android:layout_marginTop="@dimen/spacing_md"
+                android:layout_marginEnd="@dimen/spacing_md"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/section_new_note">
+
+                <LinearLayout android:id="@+id/design_blank" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginEnd="@dimen/spacing_sm" android:layout_weight="1" android:clickable="true" android:focusable="true" android:gravity="center_horizontal" android:orientation="vertical">
+                    <View android:layout_width="match_parent" android:layout_height="130dp" android:background="@drawable/bg_design_tile" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_sm" android:text="Blank note" android:textAppearance="@style/TextAppearance.UniSync.Caption" />
+                </LinearLayout>
+
+                <LinearLayout android:id="@+id/design_1" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginEnd="@dimen/spacing_sm" android:layout_weight="1" android:clickable="true" android:focusable="true" android:gravity="center_horizontal" android:orientation="vertical">
+                    <ImageView android:layout_width="match_parent" android:layout_height="130dp" android:background="@drawable/bg_design_tile" android:contentDescription="@null" android:padding="6dp" android:scaleType="centerCrop" android:src="@android:drawable/ic_menu_agenda" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_sm" android:text="Design 1" android:textAppearance="@style/TextAppearance.UniSync.Caption" />
+                </LinearLayout>
+
+                <LinearLayout android:id="@+id/design_2" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:clickable="true" android:focusable="true" android:gravity="center_horizontal" android:orientation="vertical">
+                    <ImageView android:layout_width="match_parent" android:layout_height="130dp" android:background="@drawable/bg_design_tile" android:contentDescription="@null" android:padding="6dp" android:scaleType="centerCrop" android:src="@android:drawable/ic_menu_agenda" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_sm" android:text="Design 2" android:textAppearance="@style/TextAppearance.UniSync.Caption" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/toggle_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_md"
+                android:layout_marginTop="@dimen/spacing_md"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="6dp"
+                android:text="More Designs ›"
+                android:textAppearance="@style/TextAppearance.UniSync.Caption"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/designs_row1" />
+
+            <LinearLayout
+                android:id="@+id/designs_row2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_md"
+                android:layout_marginTop="@dimen/spacing_md"
+                android:layout_marginEnd="@dimen/spacing_md"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:weightSum="3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/toggle_more">
+
+                <LinearLayout android:id="@+id/design_2b" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginEnd="@dimen/spacing_sm" android:layout_weight="1" android:clickable="true" android:focusable="true" android:gravity="center_horizontal" android:orientation="vertical">
+                    <ImageView android:layout_width="match_parent" android:layout_height="130dp" android:background="@drawable/bg_design_tile" android:contentDescription="@null" android:padding="6dp" android:scaleType="centerCrop" android:src="@android:drawable/ic_menu_agenda" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_sm" android:text="Design 2" android:textAppearance="@style/TextAppearance.UniSync.Caption" />
+                </LinearLayout>
+
+                <LinearLayout android:id="@+id/design_3" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginEnd="@dimen/spacing_sm" android:layout_weight="1" android:clickable="true" android:focusable="true" android:gravity="center_horizontal" android:orientation="vertical">
+                    <ImageView android:layout_width="match_parent" android:layout_height="130dp" android:background="@drawable/bg_design_tile" android:contentDescription="@null" android:padding="6dp" android:scaleType="centerCrop" android:src="@android:drawable/ic_menu_agenda" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_sm" android:text="Design 3" android:textAppearance="@style/TextAppearance.UniSync.Caption" />
+                </LinearLayout>
+
+                <LinearLayout android:id="@+id/design_new" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:clickable="true" android:focusable="true" android:gravity="center_horizontal" android:orientation="vertical">
+                    <FrameLayout android:layout_width="match_parent" android:layout_height="130dp" android:background="@drawable/bg_design_tile">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:text="+" android:textSize="48sp" />
+                    </FrameLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_sm" android:text="Create Design" android:textAppearance="@style/TextAppearance.UniSync.Caption" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/section_recent"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/spacing_lg"
+                android:background="@drawable/bg_collapsible_header"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/spacing_md"
+                android:paddingEnd="@dimen/spacing_md"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/designs_row2">
+                <ImageView android:id="@+id/chevron_recent" android:layout_width="16dp" android:layout_height="16dp" android:contentDescription="@null" android:rotation="270" android:src="@android:drawable/ic_media_play" />
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="@dimen/spacing_md" android:layout_weight="1" android:text="Recent Notes" android:textAppearance="@style/TextAppearance.UniSync.Body" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/section_favorite"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/spacing_xs"
+                android:background="@drawable/bg_collapsible_header"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/spacing_md"
+                android:paddingEnd="@dimen/spacing_md"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/section_recent">
+                <ImageView android:id="@+id/chevron_favorite" android:layout_width="16dp" android:layout_height="16dp" android:contentDescription="@null" android:rotation="270" android:src="@android:drawable/ic_media_play" />
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="@dimen/spacing_md" android:layout_weight="1" android:text="Favorite" android:textAppearance="@style/TextAppearance.UniSync.Body" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <include
+        android:id="@+id/bottom_nav"
+        layout="@layout/include_bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

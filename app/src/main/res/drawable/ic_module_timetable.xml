@@ -1,0 +1,14 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="40dp"
+    android:height="40dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Document body -->
+    <path
+        android:fillColor="@color/white"
+        android:pathData="M5,3H19A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3Z" />
+    <!-- Timetable horizontal lines -->
+    <path
+        android:fillColor="@color/primary_purple_dark"
+        android:pathData="M6,7H18V8H6V7M6,11H18V12H6V11M6,15H18V16H6V15M6,9V10H18V9H6M6,13V14H18V13H6M6,17V18H18V17H6Z" />
+</vector>

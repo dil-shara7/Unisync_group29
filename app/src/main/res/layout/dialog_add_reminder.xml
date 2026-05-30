@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Add Reminder dialog. Title + Due fields + Add | Cancel.
+  Uses the existing dialog background and primary button style.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_dialog"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="@dimen/spacing_lg">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🔔"
+        android:textSize="40sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/spacing_sm"
+        android:background="@color/divider" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_sm"
+        android:text="New Reminder"
+        android:textAppearance="@style/TextAppearance.UniSync.Body"
+        android:textSize="@dimen/text_size_title"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/reminder_input_title"
+        style="@style/Widget.UniSync.InputField"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/input_field_height"
+        android:layout_marginTop="@dimen/spacing_md"
+        android:hint="Title (e.g. Submit DBMS assignment)"
+        android:inputType="textCapSentences" />
+
+    <EditText
+        android:id="@+id/reminder_input_due"
+        style="@style/Widget.UniSync.InputField"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/input_field_height"
+        android:layout_marginTop="@dimen/spacing_sm"
+        android:hint="When (e.g. Tomorrow · 5:00 PM)"
+        android:inputType="text" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_md"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/reminder_dialog_add"
+            style="@style/Widget.UniSync.Button.Primary"
+            android:layout_width="100dp"
+            android:layout_height="38dp"
+            android:layout_marginEnd="@dimen/spacing_sm"
+            android:text="Add"
+            app:cornerRadius="@dimen/radius_input" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/reminder_dialog_cancel"
+            style="@style/Widget.UniSync.Button.Primary"
+            android:layout_width="100dp"
+            android:layout_height="38dp"
+            android:text="Cancel"
+            app:cornerRadius="@dimen/radius_input" />
+    </LinearLayout>
+</LinearLayout>

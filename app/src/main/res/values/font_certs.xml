@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  STUB cert arrays for the com.google.android.gms FontRequest provider.
+
+  Purpose: lets the build compile. At runtime the placeholder strings will fail
+  signature validation and Android will fall back to the default system font.
+
+  To enable real Google Fonts loading:
+    1. Open any file under res/font/ in Android Studio.
+    2. File → New → Font (or use the gutter prompt) and pick a Google Font.
+    3. Android Studio overwrites this file with the genuine cert base64 from
+       Google Play Services. After that, the four @font/ entries load correctly.
+
+  Do NOT ship to production with these placeholder strings.
+-->
+<resources>
+    <array name="com_google_android_gms_fonts_certs">
+        <item>@array/com_google_android_gms_fonts_certs_dev</item>
+        <item>@array/com_google_android_gms_fonts_certs_prod</item>
+    </array>
+
+    <string-array name="com_google_android_gms_fonts_certs_dev">
+        <item>REPLACE_VIA_ANDROID_STUDIO_FONT_IMPORTER</item>
+    </string-array>
+
+    <string-array name="com_google_android_gms_fonts_certs_prod">
+        <item>REPLACE_VIA_ANDROID_STUDIO_FONT_IMPORTER</item>
+    </string-array>
+</resources>

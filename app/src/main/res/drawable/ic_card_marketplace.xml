@@ -1,0 +1,18 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="76dp"
+    android:height="76dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Storefront awning -->
+    <path
+        android:fillColor="@color/primary_purple_dark"
+        android:pathData="M3,6L4,3H20L21,6V8H3V6Z" />
+    <!-- Shop body -->
+    <path
+        android:fillColor="@color/white"
+        android:pathData="M4,9V20H20V9H4M11,18H6V13H11V18M18,18H13V13H18V18Z" />
+    <!-- Door handle dots -->
+    <path
+        android:fillColor="@color/primary_purple_dark"
+        android:pathData="M8.5,15.5A0.5,0.5 0 0,1 9,16A0.5,0.5 0 0,1 8.5,16.5A0.5,0.5 0 0,1 8,16A0.5,0.5 0 0,1 8.5,15.5M15.5,15.5A0.5,0.5 0 0,1 16,16A0.5,0.5 0 0,1 15.5,16.5A0.5,0.5 0 0,1 15,16A0.5,0.5 0 0,1 15.5,15.5" />
+</vector>

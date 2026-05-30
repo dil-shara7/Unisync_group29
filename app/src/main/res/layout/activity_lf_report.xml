@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Lost & Found Report — Figma "Lost & Found - 8".
+  Bottom nav pinned to bottom; only form fields scroll.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    android:fitsSystemWindows="true"
+    tools:context=".LostFoundReportActivity">
+
+    <include
+        android:id="@+id/status_bar"
+        layout="@layout/include_status_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/back_button"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="14dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/cd_back"
+        android:padding="2dp"
+        android:rotation="180"
+        android:src="@android:drawable/ic_menu_revert"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/status_bar" />
+
+    <TextView
+        android:id="@+id/header_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_sm"
+        android:text="Report"
+        android:textAppearance="@style/TextAppearance.UniSync.Logo"
+        android:textSize="@dimen/text_size_title_large"
+        app:layout_constraintBottom_toBottomOf="@id/back_button"
+        app:layout_constraintStart_toEndOf="@id/back_button"
+        app:layout_constraintTop_toTopOf="@id/back_button" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@id/bottom_nav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/back_button">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/spacing_xl">
+
+            <TextView
+                android:id="@+id/label_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_md"
+                android:layout_marginTop="@dimen/spacing_md"
+                android:text="Item - Name:"
+                android:textAppearance="@style/TextAppearance.UniSync.Body"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/input_name"
+                style="@style/Widget.UniSync.InputField"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="@dimen/spacing_md"
+                android:layout_marginTop="@dimen/spacing_xs"
+                android:layout_marginEnd="@dimen/spacing_md"
+                android:autofillHints="postalAddress"
+                android:hint=""
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_name" />
+
+            <TextView
+                android:id="@+id/label_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_md"
+                android:layout_marginTop="@dimen/spacing_md"
+                android:text="Item - Category:"
+                android:textAppearance="@style/TextAppearance.UniSync.Body"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/input_name" />
+
+            <EditText
+                android:id="@+id/input_category"
+                style="@style/Widget.UniSync.InputField"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="@dimen/spacing_md"
+                android:layout_marginTop="@dimen/spacing_xs"
+                android:layout_marginEnd="@dimen/spacing_md"
+                android:autofillHints="postalAddress"
+                android:hint=""
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_category" />
+
+            <TextView
+                android:id="@+id/label_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_md"
+                android:layout_marginTop="@dimen/spacing_md"
+                android:text="Location:"
+                android:textAppearance="@style/TextAppearance.UniSync.Body"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/input_category" />
+
+            <EditText
+                android:id="@+id/input_location"
+                style="@style/Widget.UniSync.InputField"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="@dimen/spacing_md"
+                android:layout_marginTop="@dimen/spacing_xs"
+                android:layout_marginEnd="@dimen/spacing_md"
+                android:autofillHints="postalAddress"
+                android:hint=""
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_location" />
+
+            <TextView
+                android:id="@+id/label_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_md"
+                android:layout_marginTop="@dimen/spacing_md"
+                android:text="Time Period:"
+                android:textAppearance="@style/TextAppearance.UniSync.Body"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/input_location" />
+
+            <EditText
+                android:id="@+id/input_time"
+                style="@style/Widget.UniSync.InputField"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="@dimen/spacing_md"
+                android:layout_marginTop="@dimen/spacing_xs"
+                android:layout_marginEnd="@dimen/spacing_md"
+                android:autofillHints="postalAddress"
+                android:hint=""
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_time" />
+
+            <TextView
+                android:id="@+id/label_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_md"
+                android:layout_marginTop="@dimen/spacing_md"
+                android:text="Status:"
+                android:textAppearance="@style/TextAppearance.UniSync.Body"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/input_time" />
+
+            <RadioGroup
+                android:id="@+id/status_group"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_md"
+                android:layout_marginTop="@dimen/spacing_xs"
+                android:layout_marginEnd="@dimen/spacing_md"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_status">
+
+                <RadioButton
+                    android:id="@+id/status_lost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lost Item"
+                    android:textAppearance="@style/TextAppearance.UniSync.Body" />
+
+                <RadioButton
+                    android:id="@+id/status_found"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Found Item"
+                    android:textAppearance="@style/TextAppearance.UniSync.Body" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/label_upload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_md"
+                android:layout_marginTop="@dimen/spacing_md"
+                android:text="Upload an image:"
+                android:textAppearance="@style/TextAppearance.UniSync.Body"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/status_group" />
+
+            <FrameLayout
+                android:id="@+id/image_picker"
+                android:layout_width="0dp"
+                android:layout_height="160dp"
+                android:layout_marginStart="@dimen/spacing_md"
+                android:layout_marginTop="@dimen/spacing_xs"
+                android:layout_marginEnd="@dimen/spacing_md"
+                android:background="@drawable/bg_input_field"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_upload">
+
+                <ImageView
+                    android:id="@+id/image_preview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@null"
+                    android:scaleType="centerCrop"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/image_placeholder"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@null"
+                    android:src="@android:drawable/ic_menu_gallery" />
+            </FrameLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_update"
+                style="@style/Widget.UniSync.Button.Primary"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/spacing_xl"
+                android:text="Update"
+                app:cornerRadius="@dimen/radius_input"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/image_picker" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <include
+        android:id="@+id/bottom_nav"
+        layout="@layout/include_bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

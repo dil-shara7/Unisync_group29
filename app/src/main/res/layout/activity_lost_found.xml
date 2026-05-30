@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Lost & Found landing — Figma "Lost & Found - 1".
+  Large mauve outer panel containing two sub-cards:
+    Lost Items  → Report + View buttons
+    Found Items → Report + View buttons
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    android:fitsSystemWindows="true"
+    tools:context=".LostFoundActivity">
+
+    <include
+        android:id="@+id/status_bar"
+        layout="@layout/include_status_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/back_button"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="14dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/cd_back"
+        android:padding="2dp"
+        android:rotation="180"
+        android:src="@android:drawable/ic_menu_revert"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/status_bar" />
+
+    <TextView
+        android:id="@+id/header_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_sm"
+        android:text="LOST &amp; FOUND"
+        android:textAppearance="@style/TextAppearance.UniSync.Logo"
+        android:textSize="@dimen/text_size_title_large"
+        app:layout_constraintBottom_toBottomOf="@id/back_button"
+        app:layout_constraintStart_toEndOf="@id/back_button"
+        app:layout_constraintTop_toTopOf="@id/back_button" />
+
+    <View
+        android:id="@+id/header_divider"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/stroke_thin"
+        android:layout_marginStart="@dimen/spacing_sm"
+        android:layout_marginTop="@dimen/spacing_sm"
+        android:layout_marginEnd="@dimen/spacing_sm"
+        android:background="@color/divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/back_button" />
+
+    <!-- Outer mauve panel containing both sub-cards -->
+    <LinearLayout
+        android:id="@+id/outer_panel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_md"
+        android:layout_marginTop="@dimen/spacing_lg"
+        android:layout_marginEnd="@dimen/spacing_md"
+        android:background="@drawable/bg_card_top"
+        android:orientation="vertical"
+        android:padding="@dimen/spacing_md"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header_divider">
+
+        <!-- Lost Items sub-card -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/sub_lost"
+            android:layout_width="match_parent"
+            android:layout_height="112dp"
+            android:background="@drawable/bg_card_accent"
+            android:padding="@dimen/spacing_md">
+
+            <ImageView
+                android:id="@+id/lost_icon"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_lf_lost"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_md"
+                android:text="Lost Items"
+                android:textAppearance="@style/TextAppearance.UniSync.Body"
+                android:textSize="@dimen/text_size_label"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/lost_icon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/lost_report"
+                android:layout_width="96dp"
+                android:layout_height="32dp"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp"
+                android:text="Report"
+                android:textSize="@dimen/text_size_caption"
+                style="@style/Widget.UniSync.Button.Primary"
+                app:cornerRadius="@dimen/radius_pill_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/lost_view"
+                android:layout_width="96dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="@dimen/spacing_xs"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp"
+                android:text="View"
+                android:textSize="@dimen/text_size_caption"
+                style="@style/Widget.UniSync.Button.Primary"
+                app:cornerRadius="@dimen/radius_pill_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lost_report" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Found Items sub-card -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/sub_found"
+            android:layout_width="match_parent"
+            android:layout_height="112dp"
+            android:layout_marginTop="@dimen/spacing_lg"
+            android:background="@drawable/bg_card_accent"
+            android:padding="@dimen/spacing_md">
+
+            <ImageView
+                android:id="@+id/found_icon"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_lf_found"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_md"
+                android:text="Found Items"
+                android:textAppearance="@style/TextAppearance.UniSync.Body"
+                android:textSize="@dimen/text_size_label"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/found_icon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/found_report"
+                android:layout_width="96dp"
+                android:layout_height="32dp"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp"
+                android:text="Report"
+                android:textSize="@dimen/text_size_caption"
+                style="@style/Widget.UniSync.Button.Primary"
+                app:cornerRadius="@dimen/radius_pill_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/found_view"
+                android:layout_width="96dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="@dimen/spacing_xs"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp"
+                android:text="View"
+                android:textSize="@dimen/text_size_caption"
+                style="@style/Widget.UniSync.Button.Primary"
+                app:cornerRadius="@dimen/radius_pill_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/found_report" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    <include
+        android:id="@+id/bottom_nav"
+        layout="@layout/include_bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

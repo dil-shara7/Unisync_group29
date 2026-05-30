@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/spacing_md"
+    android:paddingTop="@dimen/spacing_sm"
+    android:paddingEnd="@dimen/spacing_md"
+    android:paddingBottom="@dimen/spacing_sm">
+
+    <ImageView
+        android:id="@+id/cart_image"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/bg_design_tile"
+        android:contentDescription="@null"
+        android:padding="6dp"
+        android:scaleType="centerCrop"
+        android:src="@android:drawable/ic_menu_gallery"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/cart_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_md"
+        android:layout_marginEnd="@dimen/spacing_md"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:textAppearance="@style/TextAppearance.UniSync.Body"
+        tools:text="Pencil Case"
+        app:layout_constraintEnd_toStartOf="@id/cart_delete"
+        app:layout_constraintStart_toEndOf="@id/cart_image"
+        app:layout_constraintTop_toTopOf="@id/cart_image" />
+
+    <ImageView
+        android:id="@+id/cart_delete"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Remove"
+        android:src="@android:drawable/ic_menu_delete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/cart_image" />
+
+    <!-- Quantity stepper -->
+    <LinearLayout
+        android:id="@+id/cart_stepper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_md"
+        android:layout_marginTop="@dimen/spacing_xs"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toEndOf="@id/cart_image"
+        app:layout_constraintTop_toBottomOf="@id/cart_name">
+
+        <TextView
+            android:id="@+id/cart_minus"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:background="@drawable/bg_input_field"
+            android:gravity="center"
+            android:text="-"
+            android:textAppearance="@style/TextAppearance.UniSync.Body"
+            android:textSize="18sp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <TextView
+            android:id="@+id/cart_qty"
+            android:layout_width="36dp"
+            android:layout_height="28dp"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.UniSync.Body"
+            tools:text="1" />
+
+        <TextView
+            android:id="@+id/cart_plus"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:background="@drawable/bg_input_field"
+            android:gravity="center"
+            android:text="+"
+            android:textAppearance="@style/TextAppearance.UniSync.Body"
+            android:textSize="16sp"
+            android:clickable="true"
+            android:focusable="true" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/cart_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.UniSync.Body"
+        tools:text="$10"
+        app:layout_constraintBottom_toBottomOf="@id/cart_stepper"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/cart_stepper" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="@dimen/stroke_thin"
+        android:layout_marginTop="@dimen/spacing_sm"
+        android:background="@color/divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cart_stepper" />
+</androidx.constraintlayout.widget.ConstraintLayout>

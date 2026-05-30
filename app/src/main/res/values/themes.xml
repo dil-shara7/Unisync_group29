@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!--
+      UniSync base theme.
+      Material 3 light, no action bar (designs render their own headers).
+      The Theme.FitTracker alias is kept so the existing AndroidManifest entry
+      doesn't break; prefer Theme.UniSync going forward.
+    -->
+    <style name="Base.Theme.UniSync" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Primary -->
+        <item name="colorPrimary">@color/primary_purple</item>
+        <item name="colorPrimaryDark">@color/primary_purple_dark</item>
+        <item name="colorOnPrimary">@color/on_primary</item>
+        <item name="colorPrimaryContainer">@color/primary_purple_light</item>
+        <item name="colorOnPrimaryContainer">@color/primary_purple_dark</item>
+
+        <!-- Secondary -->
+        <item name="colorSecondary">@color/accent</item>
+        <item name="colorSecondaryContainer">@color/accent_light</item>
+        <item name="colorOnSecondary">@color/white</item>
+
+        <!-- Surface -->
+        <item name="android:colorBackground">@color/background_light</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorSurfaceVariant">@color/surface_variant</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorOnSurfaceVariant">@color/text_secondary</item>
+
+        <!-- Outline / divider -->
+        <item name="colorOutline">@color/outline</item>
+
+        <!-- Error -->
+        <item name="colorError">@color/error</item>
+
+        <!-- System bars -->
+        <item name="android:statusBarColor">@color/primary_purple</item>
+        <item name="android:windowLightStatusBar">false</item>
+
+        <!-- Shape -->
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.UniSync.Small</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.UniSync.Medium</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.UniSync.Large</item>
+    </style>
+
+    <style name="Theme.UniSync" parent="Base.Theme.UniSync" />
+
+    <!-- Back-compat alias for existing AndroidManifest reference. -->
+    <style name="Base.Theme.FitTracker" parent="Base.Theme.UniSync" />
+    <style name="Theme.FitTracker" parent="Theme.UniSync" />
+
+    <!-- Shape appearances -->
+    <style name="ShapeAppearance.UniSync.Small" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/radius_sm</item>
+    </style>
+
+    <style name="ShapeAppearance.UniSync.Medium" parent="ShapeAppearance.Material3.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/radius_md</item>
+    </style>
+
+    <style name="ShapeAppearance.UniSync.Large" parent="ShapeAppearance.Material3.LargeComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/radius_lg</item>
+    </style>
+
+</resources>

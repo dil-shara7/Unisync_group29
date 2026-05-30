@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Create Schedule picker — Figma "Shedule Manager 1.1".
+  Back arrow only, "Create Schedule" title (Joti One), tagline, image strip,
+  then 3 type buttons stacked centered: Class, Exam, Study Session.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    android:fitsSystemWindows="true"
+    tools:context=".CreateScheduleActivity">
+
+    <include
+        android:id="@+id/status_bar"
+        layout="@layout/include_status_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/back_button"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="14dp"
+        android:contentDescription="@string/cd_back"
+        android:rotation="180"
+        android:src="@android:drawable/ic_menu_revert"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:padding="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/status_bar" />
+
+    <TextView
+        android:id="@+id/title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_xl"
+        android:text="Create Schedule"
+        android:textAppearance="@style/TextAppearance.UniSync.Logo"
+        android:textSize="@dimen/text_size_display"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/back_button" />
+
+    <TextView
+        android:id="@+id/subtitle_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_sm"
+        android:text="Create your Class, Exam, Session Schedule"
+        android:textAppearance="@style/TextAppearance.UniSync.Body"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_text" />
+
+    <!-- Image strip: 6 placeholder tiles to mimic the Figma strip -->
+    <LinearLayout
+        android:id="@+id/image_strip"
+        android:layout_width="0dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="@dimen/spacing_lg"
+        android:orientation="horizontal"
+        android:weightSum="6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/subtitle_text">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/card_top"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            android:src="@android:drawable/ic_menu_gallery" />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/card_accent"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            android:src="@android:drawable/ic_menu_gallery" />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/primary_purple"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            android:src="@android:drawable/ic_menu_gallery" />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/card_top"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            android:src="@android:drawable/ic_menu_gallery" />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/card_accent"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            android:src="@android:drawable/ic_menu_gallery" />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/primary_purple"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            android:src="@android:drawable/ic_menu_gallery" />
+    </LinearLayout>
+
+    <!-- 3 type buttons -->
+    <LinearLayout
+        android:id="@+id/type_row_1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="40dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_strip">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/type_class"
+            style="@style/Widget.UniSync.Button.Social.Light"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="@dimen/spacing_md"
+            android:layout_weight="1"
+            android:text="Class"
+            app:cornerRadius="@dimen/radius_input"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/type_exam"
+            style="@style/Widget.UniSync.Button.Social.Light"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="Exam"
+            app:cornerRadius="@dimen/radius_input"
+            tools:ignore="TouchTargetSizeCheck" />
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/type_study"
+        style="@style/Widget.UniSync.Button.Social.Light"
+        android:layout_width="180dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="@dimen/spacing_md"
+        android:maxLines="1"
+        android:text="Study Session"
+        android:textSize="@dimen/text_size_body"
+        app:cornerRadius="@dimen/radius_input"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/type_row_1" />
+
+    <include
+        android:id="@+id/bottom_nav"
+        layout="@layout/include_bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Decorative 24dp status-bar strip (#AC93AA) common to every UniSync screen.
+  Mirrors the design — the real system status bar is themed separately in themes.xml.
+-->
+<View xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/status_bar_strip"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/status_bar_strip_height"
+    android:background="@color/background_status_bar" />

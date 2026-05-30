@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Home Screen. Mirrors Figma node 8:219.
+  Layout: status strip + UniSync header + 2x2 feature grid + Next Class / Hot Deal row + bottom nav.
+  Card dimensions and offsets sourced verbatim from the design.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    android:fitsSystemWindows="true"
+    tools:context=".HomeActivity">
+
+    <include
+        android:id="@+id/status_bar"
+        layout="@layout/include_status_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/home_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="@dimen/home_header_top"
+        android:text="@string/app_name"
+        android:textAppearance="@style/TextAppearance.UniSync.Logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/home_tagline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="@dimen/home_tagline_top"
+        android:text="@string/app_tagline"
+        android:textAppearance="@style/TextAppearance.UniSync.Tagline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/home_avatar"
+        android:layout_width="@dimen/home_avatar_size"
+        android:layout_height="@dimen/home_avatar_size"
+        android:layout_marginTop="@dimen/home_avatar_top"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/cd_user_avatar"
+        android:background="@drawable/bg_avatar_blue"
+        android:padding="6dp"
+        android:src="@drawable/ic_avatar_student"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Top-left card: Scheduler Manager (160dp tall) -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card_schedule"
+        android:layout_width="175dp"
+        android:layout_height="@dimen/card_home_tall"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="@dimen/home_grid_top"
+        android:background="@android:color/transparent"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <include layout="@layout/view_home_feature_card" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Top-right card: Study Notes Hub (129dp — short) -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card_notes"
+        android:layout_width="175dp"
+        android:layout_height="@dimen/card_home_short"
+        android:layout_marginTop="@dimen/home_grid_top"
+        android:layout_marginEnd="13dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <include layout="@layout/view_home_feature_card" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Mid-left card: Campus Marketplace -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card_marketplace"
+        android:layout_width="175dp"
+        android:layout_height="@dimen/card_home_tall"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="@dimen/home_grid_bottom_top"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <include layout="@layout/view_home_feature_card" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Mid-right card: Lost & Found -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card_lost_found"
+        android:layout_width="175dp"
+        android:layout_height="@dimen/card_home_tall"
+        android:layout_marginTop="@dimen/home_grid_bottom_top"
+        android:layout_marginEnd="13dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <include layout="@layout/view_home_feature_card" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Bottom-left strip card: Next Class (182×85) -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card_next_class"
+        android:layout_width="182dp"
+        android:layout_height="@dimen/card_home_strip"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="@dimen/home_strip_row_top"
+        android:background="@drawable/bg_card_accent"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:padding="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/next_class_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/schedule_next_class"
+            android:textAppearance="@style/TextAppearance.UniSync.Body"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/next_class_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="10:00 AM"
+            android:textAppearance="@style/TextAppearance.UniSync.Body"
+            android:textSize="@dimen/text_size_body_small"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/next_class_label" />
+
+        <TextView
+            android:id="@+id/next_class_stats_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/home_card_statistics"
+            android:textAppearance="@style/TextAppearance.UniSync.Caption"
+            android:textSize="@dimen/text_size_micro"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/next_class_bell"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:contentDescription="@string/cd_notifications"
+            android:src="@drawable/ic_bell_alert"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Bottom-right strip card: Hot Deal -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card_hot_deal"
+        android:layout_width="174dp"
+        android:layout_height="@dimen/card_home_strip"
+        android:layout_marginTop="@dimen/home_strip_row_top"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/bg_card_accent"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/hot_deal_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/home_card_hot_deal"
+            android:textAppearance="@style/TextAppearance.UniSync.Body"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/hot_deal_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/home_card_hot_deal_item"
+            android:textAppearance="@style/TextAppearance.UniSync.Caption"
+            android:textSize="@dimen/text_size_caption_lg"
+            android:textColor="@color/text_primary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/hot_deal_label" />
+
+        <TextView
+            android:id="@+id/hot_deal_conditions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/home_card_conditions_apply"
+            android:textAppearance="@style/TextAppearance.UniSync.Tagline"
+            android:textSize="@dimen/text_size_micro"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/hot_deal_image"
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:contentDescription="@string/cd_product_image"
+            android:src="@drawable/ic_laptop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include
+        android:id="@+id/bottom_nav"
+        layout="@layout/include_bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

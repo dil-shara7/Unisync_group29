@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  UniSync dimensions — extracted from 4 Figma screens (Login, Splash, Home,
+  Schedule Mgr 1, Marketplace 1). Canvas 393×852 ⇒ 1px ≈ 1dp.
+-->
+<resources>
+    <!-- Spacing scale -->
+    <dimen name="spacing_xs">4dp</dimen>
+    <dimen name="spacing_sm">8dp</dimen>
+    <dimen name="spacing_md">16dp</dimen>
+    <dimen name="spacing_lg">24dp</dimen>
+    <dimen name="spacing_xl">32dp</dimen>
+    <dimen name="spacing_xxl">48dp</dimen>
+
+    <!-- Screen padding -->
+    <dimen name="screen_padding_horizontal">34dp</dimen>   <!-- Login -->
+    <dimen name="screen_padding_horizontal_module">15dp</dimen>  <!-- Home/Schedule/Marketplace headers -->
+    <dimen name="screen_padding_vertical">16dp</dimen>
+
+    <!-- Text sizes -->
+    <dimen name="text_size_status_bar">12sp</dimen>
+    <dimen name="text_size_micro">10sp</dimen>
+    <dimen name="text_size_caption">11sp</dimen>
+    <dimen name="text_size_caption_lg">12sp</dimen>
+    <dimen name="text_size_body_small">13sp</dimen>
+    <dimen name="text_size_body">15sp</dimen>
+    <dimen name="text_size_label">15sp</dimen>
+    <dimen name="text_size_title">20sp</dimen>
+    <dimen name="text_size_title_large">24sp</dimen>
+    <dimen name="text_size_headline">28sp</dimen>
+    <dimen name="text_size_display">32sp</dimen>           <!-- All page titles + logo -->
+
+    <!-- Corner radii -->
+    <dimen name="radius_xs">4dp</dimen>
+    <dimen name="radius_input">7dp</dimen>                  <!-- inputs, buttons, cards -->
+    <dimen name="radius_sm">7dp</dimen>
+    <dimen name="radius_pill_button">8dp</dimen>            <!-- "View Details" pills -->
+    <dimen name="radius_md">12dp</dimen>
+    <dimen name="radius_lg">16dp</dimen>
+    <dimen name="radius_xl">24dp</dimen>
+    <dimen name="radius_pill">999dp</dimen>
+
+    <!-- Component heights -->
+    <dimen name="input_field_height">34dp</dimen>
+    <dimen name="button_height">34dp</dimen>
+    <dimen name="button_height_social">34dp</dimen>
+    <dimen name="button_height_pill">28dp</dimen>           <!-- "View Details" -->
+    <dimen name="button_height_small">28dp</dimen>
+    <dimen name="list_item_height">60dp</dimen>             <!-- Schedule landing cards = 60dp -->
+    <dimen name="card_min_height">128dp</dimen>             <!-- Marketplace category card -->
+    <dimen name="card_home_tall">160dp</dimen>              <!-- Home feature card -->
+    <dimen name="card_home_short">129dp</dimen>             <!-- Home short feature card -->
+    <dimen name="card_home_strip">85dp</dimen>              <!-- Home Hot Deal / Next Class -->
+    <dimen name="card_bottom_strip_height">59dp</dimen>     <!-- Home label strip -->
+    <dimen name="bottom_nav_height">64dp</dimen>
+    <dimen name="bottom_nav_icon_top">820dp</dimen>          <!-- pin icons to ~820 in 852 frame -->
+    <dimen name="top_app_bar_height">56dp</dimen>
+    <dimen name="status_bar_strip_height">24dp</dimen>
+
+    <!-- Module header (Schedule/Marketplace/L&F) -->
+    <dimen name="module_header_title_top">56dp</dimen>
+    <dimen name="module_header_divider_top">98dp</dimen>
+    <dimen name="module_header_back_top">74dp</dimen>
+
+    <!-- Login-specific layout offsets -->
+    <dimen name="login_logo_top">90dp</dimen>
+    <dimen name="login_tagline_top">146dp</dimen>
+    <dimen name="login_email_top">207dp</dimen>
+    <dimen name="login_password_top">253dp</dimen>
+    <dimen name="login_forgot_top">292dp</dimen>
+    <dimen name="login_button_top">338dp</dimen>
+    <dimen name="login_divider_top">414dp</dimen>
+    <dimen name="login_google_top">450dp</dimen>
+    <dimen name="login_facebook_top">501dp</dimen>
+    <dimen name="login_signup_top">610dp</dimen>
+    <dimen name="login_divider_side_width">94dp</dimen>
+
+    <!-- Splash-specific -->
+    <dimen name="splash_logo_image_top">323dp</dimen>
+    <dimen name="splash_logo_image_size">148dp</dimen>
+    <dimen name="splash_logo_text_top">486dp</dimen>
+    <dimen name="splash_tagline_top">537dp</dimen>
+    <dimen name="splash_dots_top">702dp</dimen>
+    <dimen name="splash_dot_size">8dp</dimen>
+
+    <!-- Home grid -->
+    <dimen name="home_header_top">63dp</dimen>
+    <dimen name="home_tagline_top">121dp</dimen>
+    <dimen name="home_avatar_top">67dp</dimen>
+    <dimen name="home_avatar_size">55dp</dimen>
+    <dimen name="home_grid_top">203dp</dimen>
+    <dimen name="home_grid_bottom_top">395dp</dimen>
+    <dimen name="home_strip_row_top">598dp</dimen>
+
+    <!-- Schedule module landing -->
+    <dimen name="schedule_card_height">60dp</dimen>
+    <dimen name="schedule_card_top_first">222dp</dimen>
+    <dimen name="schedule_card_gap">30dp</dimen>            <!-- 312-222=90 → card+gap = 90, so gap=30 -->
+
+    <!-- Marketplace category landing -->
+    <dimen name="marketplace_card_height">128dp</dimen>
+    <dimen name="marketplace_card_top_first">154dp</dimen>
+    <dimen name="marketplace_card_image_size">99dp</dimen>
+
+    <!-- Input internal padding -->
+    <dimen name="input_text_padding_start">14dp</dimen>
+
+    <!-- Icon sizes -->
+    <dimen name="icon_size_xs">12dp</dimen>
+    <dimen name="icon_size_sm">16dp</dimen>
+    <dimen name="icon_size_md">24dp</dimen>
+    <dimen name="icon_size_nav">22dp</dimen>
+    <dimen name="icon_size_social">22dp</dimen>
+    <dimen name="icon_size_lg">32dp</dimen>
+    <dimen name="icon_size_xl">48dp</dimen>
+
+    <!-- Elevation -->
+    <dimen name="elevation_none">0dp</dimen>
+    <dimen name="elevation_card">2dp</dimen>
+    <dimen name="elevation_card_raised">4dp</dimen>
+    <dimen name="elevation_dialog">8dp</dimen>
+
+    <!-- Stroke / border -->
+    <dimen name="stroke_thin">1dp</dimen>
+    <dimen name="stroke_thick">2dp</dimen>
+</resources>

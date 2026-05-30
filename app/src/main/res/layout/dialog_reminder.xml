@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Reminder popup — Figma "Schedule Manager 15".
+  Bell emoji + "Reminder!" + Upcoming class details + Ok button.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="280dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_dialog"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="@dimen/spacing_lg">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🔔"
+        android:textSize="48sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/spacing_sm"
+        android:background="@color/divider" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_sm"
+        android:text="Reminder!"
+        android:textAppearance="@style/TextAppearance.UniSync.Body"
+        android:textSize="@dimen/text_size_title"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/reminder_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_md"
+        android:text="Upcoming Class:"
+        android:textAppearance="@style/TextAppearance.UniSync.Body" />
+
+    <TextView
+        android:id="@+id/reminder_class"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:textAppearance="@style/TextAppearance.UniSync.Caption"
+        android:textColor="@color/text_primary"
+        android:textSize="@dimen/text_size_body" />
+
+    <TextView
+        android:id="@+id/reminder_room"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.UniSync.Caption"
+        android:textColor="@color/text_primary"
+        android:textSize="@dimen/text_size_body" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/dialog_ok"
+        android:layout_width="80dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="@dimen/spacing_md"
+        android:text="Ok"
+        style="@style/Widget.UniSync.Button.Primary"
+        app:cornerRadius="@dimen/radius_input" />
+</LinearLayout>

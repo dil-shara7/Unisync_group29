@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Generic list activity used for:
+    - Marketplace per-category lists (Marketplace-screen 2, 3)
+    - Notes "My Notes" and "Recent Notes" lists
+    - Lost & Found "Lost Items" / "Found Items" lists
+  Caller sets the header title and binds the RecyclerView adapter.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    android:fitsSystemWindows="true">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/include_module_header" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list_recycler"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/spacing_md"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@id/bottom_nav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/list_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/spacing_md"
+        android:layout_marginBottom="@dimen/spacing_md"
+        android:contentDescription="@string/action_add"
+        android:src="@android:drawable/ic_input_add"
+        android:visibility="gone"
+        app:backgroundTint="@color/primary_purple"
+        app:tint="@color/on_primary"
+        app:layout_constraintBottom_toTopOf="@id/bottom_nav"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <include
+        android:id="@+id/bottom_nav"
+        layout="@layout/include_bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

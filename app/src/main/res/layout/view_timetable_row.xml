@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="52dp"
+    android:layout_marginStart="@dimen/spacing_md"
+    android:layout_marginTop="@dimen/spacing_sm"
+    android:layout_marginEnd="@dimen/spacing_md"
+    android:background="@drawable/bg_card_accent"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="@dimen/spacing_md"
+    android:paddingEnd="@dimen/spacing_md">
+
+    <TextView
+        android:id="@+id/row_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textAppearance="@style/TextAppearance.UniSync.Body"
+        tools:text="Networking Lecture" />
+
+    <ImageView
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:contentDescription="@null"
+        android:src="@android:drawable/ic_media_play" />
+</LinearLayout>

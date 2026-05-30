@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Timetable view (weekly grid). Covers Schedule Mgr 2, 3.
+  Uses RecyclerView with GridLayoutManager (7 cols x N rows) — wire the adapter
+  to slot ScheduleEvent items.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    android:fitsSystemWindows="true">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/include_module_header" />
+
+    <LinearLayout
+        android:id="@+id/days_row"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="@dimen/spacing_sm"
+        android:layout_marginTop="@dimen/spacing_md"
+        android:layout_marginEnd="@dimen/spacing_sm"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header">
+
+        <TextView android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:text="Mon" android:textAppearance="@style/TextAppearance.UniSync.Caption" />
+        <TextView android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:text="Tue" android:textAppearance="@style/TextAppearance.UniSync.Caption" />
+        <TextView android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:text="Wed" android:textAppearance="@style/TextAppearance.UniSync.Caption" />
+        <TextView android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:text="Thu" android:textAppearance="@style/TextAppearance.UniSync.Caption" />
+        <TextView android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:text="Fri" android:textAppearance="@style/TextAppearance.UniSync.Caption" />
+        <TextView android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:text="Sat" android:textAppearance="@style/TextAppearance.UniSync.Caption" />
+        <TextView android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:text="Sun" android:textAppearance="@style/TextAppearance.UniSync.Caption" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/timetable_grid"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingStart="@dimen/spacing_sm"
+        android:paddingEnd="@dimen/spacing_sm"
+        android:paddingBottom="@dimen/spacing_md"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="7"
+        app:layout_constraintBottom_toTopOf="@id/bottom_nav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/days_row" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/timetable_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/spacing_md"
+        android:layout_marginBottom="@dimen/spacing_md"
+        android:contentDescription="@string/schedule_add_event"
+        android:src="@android:drawable/ic_input_add"
+        app:backgroundTint="@color/primary_purple"
+        app:tint="@color/on_primary"
+        app:layout_constraintBottom_toTopOf="@id/bottom_nav"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <include
+        android:id="@+id/bottom_nav"
+        layout="@layout/include_bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

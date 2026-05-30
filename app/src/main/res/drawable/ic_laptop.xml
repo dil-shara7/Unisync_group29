@@ -1,0 +1,18 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="58dp"
+    android:height="58dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Screen -->
+    <path
+        android:fillColor="@color/text_primary"
+        android:pathData="M4,6H20V16H4V6M4,4A2,2 0 0,0 2,6V16A2,2 0 0,0 4,18H20A2,2 0 0,0 22,16V6A2,2 0 0,0 20,4H4Z" />
+    <!-- Keyboard base -->
+    <path
+        android:fillColor="@color/text_primary"
+        android:pathData="M1,19H23V21H1V19Z" />
+    <!-- Screen highlight (sky) -->
+    <path
+        android:fillColor="@color/primary_purple_light"
+        android:pathData="M5,7H19V15H5V7Z" />
+</vector>

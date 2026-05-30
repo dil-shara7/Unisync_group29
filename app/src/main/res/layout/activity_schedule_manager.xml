@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Schedule Manager landing. Mirrors Figma node 8:303.
+  Covers frame variants: Shedule Manager 1 (8:303), Shedule Manager 1.1 (18:62).
+  4 cards: Manage Schedule, Timetable, Calendar, Reminder.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    android:fitsSystemWindows="true"
+    tools:context=".ScheduleManagerActivity"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/include_module_header" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card_manage"
+        android:layout_width="343dp"
+        android:layout_height="@dimen/schedule_card_height"
+        android:layout_marginTop="@dimen/spacing_xl"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header">
+        <include layout="@layout/view_module_list_card" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card_timetable"
+        android:layout_width="343dp"
+        android:layout_height="@dimen/schedule_card_height"
+        android:layout_marginTop="@dimen/schedule_card_gap"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_manage">
+        <include layout="@layout/view_module_list_card" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card_calendar"
+        android:layout_width="343dp"
+        android:layout_height="@dimen/schedule_card_height"
+        android:layout_marginTop="@dimen/schedule_card_gap"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_timetable">
+        <include layout="@layout/view_module_list_card" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card_reminder"
+        android:layout_width="343dp"
+        android:layout_height="@dimen/schedule_card_height"
+        android:layout_marginTop="@dimen/schedule_card_gap"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_calendar">
+        <include layout="@layout/view_module_list_card" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include
+        android:id="@+id/bottom_nav"
+        layout="@layout/include_bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

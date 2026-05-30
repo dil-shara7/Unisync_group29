@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Delete confirmation — Figma "Schedule Manager 14".
+  Warning icon + title + body + Delete | Cancel buttons.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="280dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_dialog"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="@dimen/spacing_lg">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="⚠️"
+        android:textSize="48sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/spacing_sm"
+        android:background="@color/divider" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_sm"
+        android:text="Are You Sure?"
+        android:textAppearance="@style/TextAppearance.UniSync.Body"
+        android:textSize="@dimen/text_size_title"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_xs"
+        android:gravity="center"
+        android:text="Do you want to delete this permanently?"
+        android:textAppearance="@style/TextAppearance.UniSync.Caption" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_md"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/dialog_delete"
+            android:layout_width="100dp"
+            android:layout_height="38dp"
+            android:layout_marginEnd="@dimen/spacing_sm"
+            android:text="Delete"
+            style="@style/Widget.UniSync.Button.Primary"
+            app:cornerRadius="@dimen/radius_input" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/dialog_cancel"
+            android:layout_width="100dp"
+            android:layout_height="38dp"
+            android:text="Cancel"
+            style="@style/Widget.UniSync.Button.Primary"
+            app:cornerRadius="@dimen/radius_input" />
+    </LinearLayout>
+</LinearLayout>

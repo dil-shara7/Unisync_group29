@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Generic list-item row used for Notes list, Lost & Found list, and Marketplace
+  per-category product lists. Same visual language as the Marketplace category
+  card but condensed to 88dp.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="88dp"
+    android:layout_marginStart="@dimen/spacing_md"
+    android:layout_marginTop="@dimen/spacing_sm"
+    android:layout_marginEnd="@dimen/spacing_md"
+    android:background="@drawable/bg_card_accent"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    android:padding="@dimen/spacing_sm">
+
+    <ImageView
+        android:id="@+id/list_item_image"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:contentDescription="@string/cd_product_image"
+        android:scaleType="centerCrop"
+        android:src="@android:drawable/ic_menu_gallery"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/list_item_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_md"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:textAppearance="@style/TextAppearance.UniSync.Body"
+        tools:text="Item title"
+        app:layout_constraintEnd_toStartOf="@id/list_item_action"
+        app:layout_constraintStart_toEndOf="@id/list_item_image"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/list_item_subtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textAppearance="@style/TextAppearance.UniSync.Caption"
+        tools:text="Subtitle / price / location"
+        app:layout_constraintEnd_toStartOf="@id/list_item_action"
+        app:layout_constraintStart_toStartOf="@id/list_item_title"
+        app:layout_constraintTop_toBottomOf="@id/list_item_title" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/list_item_action"
+        style="@style/Widget.UniSync.Button.Social.Light"
+        android:layout_width="92dp"
+        android:layout_height="@dimen/button_height_pill"
+        android:text="@string/action_view_details"
+        android:textSize="@dimen/text_size_caption"
+        app:cornerRadius="@dimen/radius_pill_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

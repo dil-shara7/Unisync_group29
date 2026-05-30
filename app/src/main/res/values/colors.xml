@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  UniSync color palette — extracted from Figma file 5vOHypfr8Ya03Au7lMnfhF.
+  Sources by node:
+    3:21   Splash         → splash background
+    8:274  Login page     → primary buttons, inputs, link
+    8:219  Home           → feature card top (#886e85), accent (#af8fad)
+    8:303  Schedule Mgr 1 → category card (#af8fad)
+    18:92  Marketplace 1  → product card (#af8fad), "View Details" pill (#c4b8c3)
+-->
+<resources>
+    <!-- Neutrals -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Primary brand ramp (mauve / muted orchid) -->
+    <color name="primary_purple">#FFB073AA</color>           <!-- primary button (Login) -->
+    <color name="primary_purple_dark">#FF682162</color>      <!-- inline links emphasis -->
+    <color name="primary_purple_light">#FFC4B8C3</color>     <!-- inputs, "View Details" pill -->
+    <color name="on_primary">#FF000000</color>
+
+    <!-- Card / surface ramp -->
+    <color name="card_top">#FF886E85</color>                 <!-- Home feature card top half -->
+    <color name="card_accent">#FFAF8FAD</color>              <!-- Schedule/Marketplace/L&F cards, Hot Deal -->
+    <color name="card_bottom_strip">#FFC4B8C3</color>        <!-- Home card label strip -->
+
+    <!-- Secondary accent -->
+    <color name="accent">#FF682162</color>
+    <color name="accent_light">#FFC4B8C3</color>
+
+    <!-- Surfaces / backgrounds -->
+    <color name="background_light">#FFDED5DE</color>          <!-- standard page bg -->
+    <color name="background_splash">#FFD7AFD3</color>         <!-- splash bg (89% alpha pink) -->
+    <color name="background_status_bar">#FFAC93AA</color>
+    <color name="background_status_bar_splash">#FFAF8FAD</color>
+    <color name="surface">#FFFFFFFF</color>
+    <color name="surface_variant">#FFC4B8C3</color>
+    <color name="surface_elevated">#FFDED5DE</color>
+
+    <!-- Text -->
+    <color name="text_primary">#FF000000</color>
+    <color name="text_secondary">#FF655E64</color>
+    <color name="text_tertiary">#FF655E64</color>
+    <color name="text_on_primary">#FF000000</color>
+    <color name="text_link">#FF682162</color>
+    <color name="text_disabled">#61000000</color>
+
+    <!-- Lines / dividers -->
+    <color name="divider">#FF000000</color>
+    <color name="outline">#FF655E64</color>
+
+    <!-- States -->
+    <color name="error">#FFB3261E</color>
+    <color name="success">#FF1B873B</color>
+    <color name="warning">#FFE5A100</color>
+    <color name="info">#FF1B6FB3</color>
+
+    <!-- Category tags -->
+    <color name="tag_blue">#FF1B6FB3</color>
+    <color name="tag_green">#FF1B873B</color>
+    <color name="tag_orange">#FFE5A100</color>
+    <color name="tag_red">#FFB3261E</color>
+</resources>
