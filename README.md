@@ -6,7 +6,7 @@ UniSync is a native Android mobile application developed as part of the Mobile A
 
 ---
 
-## 👥 Team
+## Team
 
 | Student ID | Name |
 |---|---|
@@ -17,25 +17,25 @@ UniSync is a native Android mobile application developed as part of the Mobile A
 
 ---
 
-## 🎯 SDG Alignment
+## SDG Alignment
 
 **SDG 4 – Quality Education**
 UniSync supports quality education by helping students stay organized with their academic schedule, study notes, reminders, and shared learning resources — all from one mobile interface.
 
 ---
 
-## ✨ Features
+## Features
 
 | Module | Description |
 |---|---|
-| 🔐 Authentication | Register & login with email/password. Passwords hashed using PBKDF2WithHmacSHA256 with 16-byte salt |
-| 🏠 Home Dashboard | Central hub with cards for Schedule, Notes, Marketplace, and Lost & Found |
-| 📅 Schedule Manager | Create, view, edit and delete class/exam/study events with calendar and timetable views |
-| 🔔 Reminders | Add and manage personal academic reminders |
-| 📝 Study Notes | Upload, browse, bookmark, share and delete study notes with image attachments |
-| 🛒 Campus Marketplace | Browse categories, post listings, search items, add to cart and checkout |
-| 🔍 Lost & Found | Report lost/found items by category and location, search and filter reports |
-| 👤 Profile | View student details and logout |
+|  Authentication | Register & login with email/password. Passwords hashed using PBKDF2WithHmacSHA256 with 16-byte salt |
+|  Home Dashboard | Central hub with cards for Schedule, Notes, Marketplace, and Lost & Found |
+|  Schedule Manager | Create, view, edit and delete class/exam/study events with calendar and timetable views |
+|  Reminders | Add and manage personal academic reminders |
+|  Study Notes | Upload, browse, bookmark, share and delete study notes with image attachments |
+|  Campus Marketplace | Browse categories, post listings, search items, add to cart and checkout |
+|  Lost & Found | Report lost/found items by category and location, search and filter reports |
+|  Profile | View student details and logout |
 
 ---
 
@@ -55,13 +55,13 @@ UniSync supports quality education by helping students stay organized with their
 
 ---
 
-## 📱 Screens
+##  Screens
 
 Splash · Login · Sign Up · Home · Profile · Schedule Manager · Schedule Form · Calendar View · Timetable List · Study Notes Hub · Upload/Edit Note · Note Detail · Marketplace · Category Products · Marketplace Detail · Add/Edit Item · Cart · Checkout · Lost & Found Landing · Lost/Found Category List · Lost/Found Items · Lost/Found Report
 
 ---
 
-## 🎨 Design
+##  Design
 
 - **Design Tool:** Figma → [View Prototype](https://www.figma.com)
 - **Primary Color:** `#B073AA` (Purple)
@@ -70,7 +70,7 @@ Splash · Login · Sign Up · Home · Profile · Schedule Manager · Schedule Fo
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 - Android Studio Hedgehog or later
@@ -92,7 +92,7 @@ The app seeds demo data on first launch via `DatabaseSeeder`.
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```
 app/src/main/
@@ -112,23 +112,23 @@ app/src/main/
 
 ---
 
-## 🧪 Testing
+##  Testing
 
 16 test cases covering Registration, Login, Navigation, Schedule, Notes, Marketplace, Cart, Checkout, Lost & Found, and Logout — all passing. See the project report for the full test case table.
 
 ---
 
-## 📦 Downloads
+##  Downloads
 
 | Resource | Link |
 |---|---|
-| 📥 APK | [Download APK](https://drive.google.com/file/d/1Qg-Dr97OgTvseUTH3rdXMQDlfU3uRLr1/view?usp=sharing) |
-| 🎥 Video Demo | [Watch Demo](https://drive.google.com/file/d/1wCw7G-WnLPYAprKv9xLdGWipoSMIGj7z/view?usp=sharing) |
-| 🎨 Figma Design | [View Prototype](https://www.figma.com) |
+|  APK | [Download APK](https://drive.google.com/file/d/1Qg-Dr97OgTvseUTH3rdXMQDlfU3uRLr1/view?usp=sharing) |
+|  Video Demo | [Watch Demo](https://drive.google.com/file/d/1wCw7G-WnLPYAprKv9xLdGWipoSMIGj7z/view?usp=sharing) |
+|  Figma Design | [View Prototype](https://www.figma.com) |
 
 ---
 
-## ⚠️ Limitations
+##  Limitations
 
 - No cloud/backend storage (local Room DB only)
 - No real push notifications
@@ -138,6 +138,6 @@ app/src/main/
 
 ---
 
-## 📄 License
+##  License
 
 This project was developed for academic purposes as part of a university module assessment.
